@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
+			sign_in @user
 			flash[:success] = "Hello #{ @user.name }, Welcome to Mini Twitter!"
 			redirect_to @user
 		else
