@@ -4,6 +4,25 @@ describe "Static pages" do
 	let(:base_title) { "Mini Twitter app" }
  	
  	subject { page }
+
+	describe "index" do
+		before do
+			sign_in FactoryGirl.create(:user)
+			FactoryGirl.create(:user, name: "Bob", email: "bob@example.com")
+			FactoryGirl.create(:user, name: "Ben", email: "ben@example.com")
+			visit users_path
+		end
+
+		it { should have_title('All users') }
+		it { should have_content('All users') }
+
+		it "should list each user" do
+			User.all.each do |user|
+				expect(page).to have_selector('li', text: user.name)
+			end
+		end
+	end
+	
   	describe "Home page" do
 		before { visit root_path }
 	    it { should have_content('Mini Twitter') }
