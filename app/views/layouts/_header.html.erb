@@ -14,14 +14,14 @@
                 Account <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to raw('<i class="icon-user"></i> Profile'), current_user %></li>
-                <li><%= link_to raw('<i class="icon-cogs"></i> Settings'), edit_user_path(current_user) %></li>
+                <li><%= link_to raw('<span class="icon"><i class="icon-user"></i></span> Profile'), current_user %></li>
+                <li><%= link_to raw('<span class="icon"><i class="icon-cogs"></i></span> Settings'), edit_user_path(current_user) %></li>
                 <li class="divider"></li>
-                <li><%= link_to raw('<i class="icon-signout"></i> Sign out'), signout_path, method: "delete" %></li>
+                <li><%= link_to raw('<span class="icon"><i class="icon-signout"></i></span> Sign out'), signout_path, method: "delete" %></li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to raw('<i class="icon-signin"></i> Sign in'), signin_path %></li>
+            <li><%= link_to raw('<span class="icon"><i class="icon-signin"></i></span> Sign in'), signin_path %></li>
           <% end %>
         </ul>
       </nav>
