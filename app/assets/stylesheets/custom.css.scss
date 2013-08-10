@@ -154,6 +154,43 @@ aside {
 	float: left;
 	margin-right: 10px;
 	height: 50px;
+	border-radius: 10%;
+	-moz-border-radius: 10%;
+	-webkit-border-radius: 10%;
+}
+
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $grayLighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
+
+.round{
+		margin: 1px 1px;
+
 }
 
 /* forms */
@@ -204,7 +241,6 @@ input {
 
 .icon {
 	color: #ccc;
-	padding-left: 10px;
 }
 
 /* microposts */
@@ -223,14 +259,15 @@ input {
 }
 .timestamp {
 	color: $grayLight;
+	font-size: small;
 }
 .gravatar {
 	float: left;
-	margin-right: 10px;
+	margin-right: 15px;
 }
 aside {
 	textarea {
-		height: 100px;
+		height: 120px;
 		margin-bottom: 5px;
 	}
 }
